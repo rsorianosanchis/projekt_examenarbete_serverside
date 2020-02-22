@@ -1,0 +1,11 @@
+{
+  "name": "apiserverside",
+  "version": "1.0.0",
+  "description": "api for reactclientside",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ricardo soriano",
+  "license": "ISC"
+}
