@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 4000;
 
 //importing routers/ midlewares
 server.use('/backend/user', require('./routes/user'));
+server.use('/backend/auth', require('./routes/auth'));
 
 // kör server
 
