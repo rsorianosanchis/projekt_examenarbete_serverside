@@ -1,14 +1,10 @@
 //routes att auth users
 const express = require('express');
 const router = express.Router();
+const authController = require('../controllers/authController');
 
-// Create a user
-// endpoint  => backend/users
-//nota: como esta declarada en index.js då, aqui ponemos solo /
-// router.post('/', () => {
-//   console.log('testing creando usuario enpoint');
-// });
+// skapa en användare 'user'
 
-router.post('/');
+router.post('/', authController.controlUser);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-// invocamos al orm de mongoose para hacer las consultas a la DB
+// invocamos al orm de mongoose para poder conectarnos la DB
 const mongoose = require('mongoose');
 //mongoose.set('useCreateIndex', true);
 //
