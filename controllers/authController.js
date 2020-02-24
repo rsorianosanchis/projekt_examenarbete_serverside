@@ -26,7 +26,7 @@ exports.controlUser = async (req, resp) => {
       payload,
       process.env.SECRET,
       {
-        expiresIn: 600 //10 MINUTER 600s
+        expiresIn: 6000 //10 MINUTER 600s
       },
       (error, token) => {
         if (error) throw error;
