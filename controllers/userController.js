@@ -39,6 +39,7 @@ exports.createUser = async (req, res) => {
     const payload = {
       user: { id: user.id }
     };
+    console.log(payload);
 
     //signature
     jwt.sign(

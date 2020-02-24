@@ -5,5 +5,6 @@ const auth = require('../middleware/auth');
 
 // create project backend/project
 router.post('/', auth, projectController.createProject);
+router.get('/', auth, projectController.createProject);
 
 module.exports = router;
