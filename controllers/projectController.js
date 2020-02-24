@@ -45,7 +45,18 @@ exports.updateProject = async (req, resp) => {
     }
 
     //jämnföra owner project vs nuvarande user
+    console.log(project.owner.toString(), req.user.id);
+
+    if (project.owner !== req.user.id) {
+      resp.status(401).send({ msg: 'Init session again' });
+    }
     //update
+    project = await Project.findByIdAndUpdate(
+      { id: req.params.id },
+      { $set: newNameProject },
+      { new: true }
+    );
+    resp.json({ project });
   } catch (error) {
     console.error(error);
     resp.status(500).send('There is an error');
