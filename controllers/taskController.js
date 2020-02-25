@@ -80,3 +80,25 @@ exports.updateTask = async (req, resp) => {
     resp.status(500).send('There is an error');
   }
 };
+//delete task
+exports.deleteTask = async (req, resp) => {
+  try {
+    //extract task inkomande properties.
+    const { project } = req.body;
+    //
+    let task = await Task.findById(req.params.id); //params url
+    if (!task) {
+      return resp.status(404).json({ msg: 'Task not exists' });
+    }
+    ////kontroll user vs porjectowner
+    const projectDB = await Project.findById(project);
+    if (projectDB.owner.toString() !== req.user.id) {
+      return resp.status(401).send({ msg: 'Init session again' });
+    }
+    await Task.findOneAndRemove({ _id: req.params.id });
+    resp.json({ msg: 'task has been deleted' });
+  } catch (error) {
+    console.error(error);
+    resp.status(500).send('There is an error');
+  }
+};
