@@ -7,5 +7,8 @@ const auth = require('../middleware/auth');
 router.post('/', auth, taskController.createTask);
 //get tasks by project
 router.get('/', auth, taskController.getTasks);
-//
+//update name eller state
+router.get('/:id', auth, taskController.updateTask);
+//delete task
+
 module.exports = router;
