@@ -17,6 +17,7 @@ const PORT = process.env.PORT || 4000;
 server.use('/backend/user', require('./routes/user'));
 server.use('/backend/auth', require('./routes/auth'));
 server.use('/backend/project', require('./routes/project'));
+server.use('/backend/task', require('./routes/task'));
 
 // kör server
 
