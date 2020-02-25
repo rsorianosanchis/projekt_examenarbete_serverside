@@ -8,4 +8,4 @@ router.post('/', auth, taskController.createTask);
 //get tasks by project
 router.get('/', auth, taskController.getTasks);
 //
-router.module.exports = router;
+module.exports = router;
