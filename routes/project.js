@@ -9,5 +9,7 @@ router.post('/', auth, projectController.createProject);
 router.get('/', auth, projectController.getProjects);
 // PUT en project via id
 router.put('/:id', auth, projectController.updateProject);
+//DELETE PROJECT
+router.delete('/:id', auth, projectController.deleteProject);
 
 module.exports = router;
